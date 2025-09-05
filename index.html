@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuff Ass Proxy</title>
+    <!-- Link to your external CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <audio id="background-audio" loop>
+        <!-- Remember to replace this with the actual path to your audio file. -->
+        <source src="path/to/your/ambient-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <h1 class="site-title">tuff ass proxy</h1>
+    <header class="site-header">
+        <button class="auth-button" id="admin-link">Admin Panel</button>
+        <button class="auth-button" id="logout-btn">Logout</button>
+        <button class="auth-button" id="show-login-btn">Login</button>
+    </header>
+    <button class="auth-button" id="mute-btn">Mute</button>
+
+    <div id="login-overlay">
+        <form id="login-form">
+            <h2>Admin Login</h2><div id="error-message"></div>
+            <div class="input-group"><label for="email">Email</label><input type="email" id="email" required></div>
+            <div class="input-group"><label for="password">Password</label><input type="password" id="password" required></div>
+            <button type="submit" id="login-button">Login</button>
+        </form>
+    </div>
+
+    <div class="content-container">
+        <div class="panel-container">
+            <div class="tilting-panel" id="panel-1"><h2>Loading...</h2><p></p></div>
+            <div class="tilting-panel" id="panel-2"><h2>Loading...</h2><p></p></div>
+            <div class="tilting-panel" id="panel-3"><h2>Loading...</h2><p></p></div>
+        </div>
+    </div>
+    <canvas id="spark-canvas"></canvas>
+
+    <div id="admin-dashboard">
+        <aside class="admin-sidebar">
+            <h2>Admin Panel</h2>
+            <nav class="admin-nav">
+                <ul>
+                    <li><a href="#dashboard" class="admin-nav-link active">Dashboard</a></li>
+                    <li><a href="#content" class="admin-nav-link">Content Editor</a></li>
+                    <li><a href="#users" class="admin-nav-link">Users</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="admin-main-content">
+            <div id="page-dashboard" class="admin-page active">
+                <h1>Dashboard</h1>
+                <div class="dashboard-widgets">
+                    <div class="widget"><h3>Souls Captured</h3><p>7,182,934</p></div>
+                    <div class="widget"><h3>Active Portals</h3><p>9</p></div>
+                    <div class="widget"><h3>Server Heat</h3><p>666°</p></div>
+                </div>
+                <div class="upload-widget">
+                    <h3>Change Background Audio</h3>
+                    <input type="file" id="mp3-upload-input" accept="audio/mpeg">
+                    <label for="mp3-upload-input" class="upload-label">Upload New .mp3 File</label>
+                    <p id="file-name">No file selected.</p>
+                </div>
+            </div>
+            <div id="page-content" class="admin-page">
+                <h1>Content Editor</h1>
+                <form id="content-form">
+                    <div class="form-group"><label for="panel1-title">Panel 1 Title</label><input type="text" id="panel1-title"></div>
+                    <div class="form-group"><label for="panel1-text">Panel 1 Text</label><textarea id="panel1-text" rows="3"></textarea></div>
+                    <div class="form-group"><label for="panel2-title">Panel 2 Title</label><input type="text" id="panel2-title"></div>
+                    <div class="form-group"><label for="panel2-text">Panel 2 Text</label><textarea id="panel2-text" rows="3"></textarea></div>
+                    <div class="form-group"><label for="panel3-title">Panel 3 Title</label><input type="text" id="panel3-title"></div>
+                    <div class="form-group"><label for="panel3-text">Panel 3 Text</label><textarea id="panel3-text" rows="3"></textarea></div>
+                    <button type="submit" class="save-btn">Save Changes</button>
+                    <p id="save-notification">Changes saved!</p>
+                </form>
+            </div>
+            <div id="page-users" class="admin-page">
+                <h1>User Management</h1><p>This is a simulation.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Firebase SDKs (these must load before your app.js file) -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+    
+    <!-- Link to your external JavaScript file -->
+    <script src="js/app.js"></script>
+</body>
+</html>
